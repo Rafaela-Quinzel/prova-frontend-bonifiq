@@ -1,0 +1,26 @@
+.user-info-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #007bff;
+  text-align: center;
+}
+
+.user-name {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #666;
+  word-break: break-word;
+}
+
+.user-email strong {
+  color: #333;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}

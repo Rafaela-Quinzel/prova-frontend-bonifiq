@@ -1,0 +1,29 @@
+.post-card {
+  padding: 16px;
+  margin: 12px 16px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-title {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+}
+
+.post-body {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
