@@ -3,6 +3,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .app-container {
@@ -11,37 +12,12 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.posts-section {
-  flex: 1;
-  overflow-y: auto;
-  padding: 16px 0;
-}
-
-.posts-title {
-  margin: 16px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-}
-
-.no-posts {
-  padding: 32px 20px;
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-}
-
-.posts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
 /* Mobile-first responsive design */
@@ -50,26 +26,4 @@
     max-width: 320px;
     max-height: 600px;
   }
-
-  .posts-title {
-    font-size: 16px;
-  }
-}
-
-/* Scrollbar styling */
-.posts-section::-webkit-scrollbar {
-  width: 6px;
-}
-
-.posts-section::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.posts-section::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.posts-section::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }

@@ -87,7 +87,7 @@
         const title = document.createElement('h3');
 
         title.id = 'bonifiq-widget-title';
-        title.textContent = 'Bonifiq';
+        title.textContent = 'BonifiQ';
 
         /**
          * CLOSE BUTTON

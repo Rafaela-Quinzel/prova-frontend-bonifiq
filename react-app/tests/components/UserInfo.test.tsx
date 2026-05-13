@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { UserInfo } from '../../src/components/UserInfo';
+import { UserInfo } from '../../src/components/user/UserInfo';
 import { describe, it, expect } from 'vitest';
 
 describe('UserInfo', () => {

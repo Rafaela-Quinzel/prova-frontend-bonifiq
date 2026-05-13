@@ -1,4 +1,4 @@
-import type { User } from '../types';
+import type { User } from '../../types';
 import './UserInfo.css';
 
 interface UserInfoProps {
@@ -10,7 +10,7 @@ export const UserInfo = ({ user }: UserInfoProps) => {
     <div className="user-info-container">
       <h2 className="user-name">{user.name}</h2>
       <div className="user-email">
-        <strong>Email:</strong> {user.email}
+        <strong>E-mail:</strong> {user.email}
       </div>
     </div>
   );
