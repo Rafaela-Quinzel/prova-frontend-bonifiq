@@ -1,0 +1,157 @@
+/* BUTTON */
+
+#bonifiq-widget-button {
+  all: initial;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2147483647;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  box-shadow:
+    0 4px 12px rgba(102, 126, 234, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#bonifiq-widget-button,
+#bonifiq-widget-button * {
+  box-sizing: border-box;
+}
+
+#bonifiq-widget-button:hover {
+  transform: scale(1.15) translateY(-3px);
+
+  box-shadow:
+    0 8px 24px rgba(102, 126, 234, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#bonifiq-widget-button:active {
+  transform: scale(0.95);
+}
+
+/* CONTAINER */
+
+#bonifiq-widget-container {
+  position: fixed;
+
+  bottom: 90px;
+  right: 20px;
+
+  width: 320px;
+  height: 600px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  z-index: 2147483646;
+
+  display: none;
+  flex-direction: column;
+
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#bonifiq-widget-container,
+#bonifiq-widget-container * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+#bonifiq-widget-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px;
+
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  color: white;
+}
+
+#bonifiq-widget-title {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* CLOSE BUTTON */
+
+#bonifiq-close-btn {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+#bonifiq-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+
+  transform: rotate(90deg);
+}
+
+/* IFRAME */
+
+#bonifiq-widget-iframe {
+  flex: 1;
+
+  width: 100%;
+
+  border: none;
+}
+
+/* ANIMATION */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
