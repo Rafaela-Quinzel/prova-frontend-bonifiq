@@ -58,8 +58,19 @@
 	bottom: 90px;
 	right: 20px;
 
-	width: 320px;
-	height: 600px;
+	/* Até 320×600 (requisito); em viewports estreitas/baixas encaixa na tela */
+	width: min(
+		320px,
+		calc(100vw - 40px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px))
+	);
+	height: min(
+		600px,
+		calc(100vh - 100px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))
+	);
+	height: min(
+		600px,
+		calc(100dvh - 100px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))
+	);
 
 	background: white;
 
