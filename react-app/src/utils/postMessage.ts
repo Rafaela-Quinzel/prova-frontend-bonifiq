@@ -1,9 +1,9 @@
 import type { PostMessagePayload } from '../types';
 
 /**
- * Get the logged user ID from the parent window via postMessage
- * Works across different domains (iframe communication)
- * @returns Promise with the user ID
+ * Recupera o ID do usuário logado da janela pai utilizando postMessage.
+ * Suporta comunicação entre diferentes domínios (integração via iframe).
+ * @returns Uma Promise que resolve com o ID do usuário.
  */
 export const getUserIdFromParent = (): Promise<number> => {
   return new Promise((resolve, reject) => {
@@ -16,7 +16,7 @@ export const getUserIdFromParent = (): Promise<number> => {
     }, 5000);
 
     const handleMessage = (event: MessageEvent<PostMessagePayload>) => {
-      // Validate that the message is from the expected source
+      // Garante que a mensagem contém o payload de resposta esperado
       if (event.data.type === 'USER_ID_RESPONSE' && event.data.userId) {
         clearTimeout(timeout);
         window.removeEventListener('message', handleMessage);
@@ -24,19 +24,19 @@ export const getUserIdFromParent = (): Promise<number> => {
       }
     };
 
-    // Listen for the response from parent window
+    // Aguarda a resposta da janela pai
     window.addEventListener('message', handleMessage);
 
-    // Request the user ID from parent
+    // Solicita o ID do usuário para a aplicação pai
     const payload: PostMessagePayload = { type: 'GET_USER_ID' };
     window.parent.postMessage(payload, '*');
   });
 };
 
 /**
- * Send a message to the parent window
- * @param type - Message type
- * @param data - Additional data to send
+ * Envia uma mensagem para a janela pai.
+ * @param type - Tipo da mensagem enviada.
+ * @param data - Dados adicionais opcionais.
  */
 export const sendMessageToParent = (
   type: PostMessagePayload['type'],
@@ -47,8 +47,8 @@ export const sendMessageToParent = (
 };
 
 /**
- * Register a message listener for parent window messages
- * @param callback - Function to call when a message is received
+ * Registra um listener para mensagens recebidas da janela pai.
+ * @param callback - Função executada quando uma mensagem é recebida.
  */
 export const onParentMessage = (
   callback: (payload: PostMessagePayload) => void

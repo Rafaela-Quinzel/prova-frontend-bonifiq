@@ -250,7 +250,6 @@ const CONFIG = {
     function startWidget() {
         loadCSS();
         loadFontAwesome();
-
         initWidget();
     }
 
