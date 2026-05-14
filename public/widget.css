@@ -1,157 +1,223 @@
 /* BUTTON */
 
 #bonifiq-widget-button {
-  all: initial;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+	all: initial;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
 
-  width: 56px;
-  height: 56px;
+	width: 56px;
+	height: 56px;
 
-  border-radius: 50%;
-  border: none;
+	border-radius: 50%;
+	border: none;
 
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
-  color: white;
-  font-size: 24px;
-  line-height: 1;
+	color: white;
+	font-size: 24px;
+	line-height: 1;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  z-index: 2147483647;
+	z-index: 2147483647;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  box-shadow:
-    0 4px 12px rgba(102, 126, 234, 0.4),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow:
+		0 4px 12px rgba(102, 126, 234, 0.4),
+		0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #bonifiq-widget-button,
 #bonifiq-widget-button * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 #bonifiq-widget-button:hover {
-  transform: scale(1.15) translateY(-3px);
+	transform: scale(1.15) translateY(-3px);
 
-  box-shadow:
-    0 8px 24px rgba(102, 126, 234, 0.5),
-    0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow:
+		0 8px 24px rgba(102, 126, 234, 0.5),
+		0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #bonifiq-widget-button:active {
-  transform: scale(0.95);
+	transform: scale(0.95);
 }
 
 /* CONTAINER */
 
 #bonifiq-widget-container {
-  position: fixed;
+	position: fixed;
 
-  bottom: 90px;
-  right: 20px;
+	bottom: 90px;
+	right: 20px;
 
-  width: 320px;
-  height: 600px;
+	/* Até 320×600 (requisito); em viewports estreitas/baixas encaixa na tela */
+	width: min(
+		320px,
+		calc(100vw - 40px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px))
+	);
+	height: min(
+		600px,
+		calc(100vh - 100px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))
+	);
+	height: min(
+		600px,
+		calc(100dvh - 100px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px))
+	);
 
-  background: white;
+	background: white;
 
-  border-radius: 10px;
+	border-radius: 10px;
 
-  overflow: hidden;
+	overflow: hidden;
 
-  z-index: 2147483646;
+	z-index: 2147483646;
 
-  display: none;
-  flex-direction: column;
+	display: none;
+	flex-direction: column;
 
-  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+	box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
 
-  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 #bonifiq-widget-container,
 #bonifiq-widget-container * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* HEADER */
 
 #bonifiq-widget-header {
-  display: flex;
+	display: flex;
 
-  align-items: center;
-  justify-content: space-between;
+	align-items: center;
+	justify-content: space-between;
 
-  padding: 16px;
+	padding: 16px;
 
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
-  color: white;
+	color: white;
 }
 
 #bonifiq-widget-title {
-  margin: 0;
+	margin: 0;
 
-  font-size: 18px;
-  font-weight: 600;
+	font-size: 18px;
+	font-weight: 600;
 }
 
 /* CLOSE BUTTON */
 
 #bonifiq-close-btn {
-  width: 32px;
-  height: 32px;
+	width: 32px;
+	height: 32px;
 
-  border: none;
-  border-radius: 50%;
+	border: none;
+	border-radius: 50%;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  background: rgba(255, 255, 255, 0.25);
+	background: rgba(255, 255, 255, 0.25);
 
-  color: white;
+	color: white;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 #bonifiq-close-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
+	background: rgba(255, 255, 255, 0.4);
 
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 /* IFRAME */
 
 #bonifiq-widget-iframe {
-  flex: 1;
+	flex: 1;
 
-  width: 100%;
+	width: 100%;
 
-  border: none;
+	border: none;
+}
+
+/* LOADING */
+
+#bonifiq-widget-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.bonifiq-loading-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	color: #555;
+	font-size: 14px;
+}
+
+/* ERROR */
+
+#bonifiq-widget-error {
+	flex: 1;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	text-align: center;
+}
+
+.bonifiq-error-content {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	color: #666;
+}
+
+.bonifiq-error-content i {
+	font-size: 32px;
+	color: #a855f7;
+}
+
+.bonifiq-error-content p {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.bonifiq-error-content small {
+	font-size: 13px;
+	color: #999;
 }
 
 /* ANIMATION */
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

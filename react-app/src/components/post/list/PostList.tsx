@@ -15,7 +15,7 @@ export function PostList({ posts }: Props) {
 
       {posts.length === 0 ? (
         <div className="no-posts">
-          No posts found
+          Nenhum post encontrado para este usuário.
         </div>
       ) : (
         <div className="posts-list">
